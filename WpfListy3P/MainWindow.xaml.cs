@@ -22,6 +22,7 @@ namespace WpfListy3P
     {
         public List<String> ListaSlow { get; set; }
         public List<Produkt> Produkty { get; set; }
+        public Produkt ZaznaczonyElement { get; set; }
         public MainWindow()
         {
             ListaSlow = new List<String>();
@@ -35,6 +36,7 @@ namespace WpfListy3P
             DataContext = this;
             lista3.ItemsSource = ListaSlow;
             przygotujDane();
+            
         }
         private void przygotujDane()
         {
