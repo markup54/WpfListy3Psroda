@@ -21,7 +21,7 @@ namespace WpfListy3P
     public partial class MainWindow : Window
     {
         public List<String> ListaSlow { get; set; }
-
+        public List<Produkt> Produkty { get; set; }
         public MainWindow()
         {
             ListaSlow = new List<String>();
@@ -33,7 +33,16 @@ namespace WpfListy3P
             ListaSlow.Add("w"); 
             InitializeComponent();
             DataContext = this;
-            lista3.ItemsSource = ListaSlow; 
+            lista3.ItemsSource = ListaSlow;
+            przygotujDane();
+        }
+        private void przygotujDane()
+        {
+            Produkty = new List<Produkt>();
+            Produkty.Add(new Produkt("klocki", 34.99, "plastikowe ", true));
+            Produkty.Add(new Produkt("miś", 59.99, "milutki ", true));
+            Produkty.Add(new Produkt("autko", 4.99, "szybkie ", true));
+            Produkty.Add(new Produkt("samolot", 44, "", false));
         }
     }
 }

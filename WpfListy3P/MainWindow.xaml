@@ -35,10 +35,23 @@
                     </ItemsControl>
                     <Separator/>
                     <ItemsControl x:Name="lista3"/>
+                    <Separator/>
+                    <ItemsControl ItemsSource="{Binding Produkty}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="{Binding Nazwa}"/>
+                                    <Label Content="{Binding Opis}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </StackPanel>
             </TabItem>
             <TabItem Header="ListBox">
-
+                <ListBox ItemsSource="{Binding Produkty}">
+                    
+                </ListBox>
             </TabItem>
             <TabItem Header="listView"/>
             <TabItem Header="dataGrid"/>
