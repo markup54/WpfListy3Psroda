@@ -62,8 +62,63 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </TabItem>
-            <TabItem Header="listView"/>
-            <TabItem Header="dataGrid"/>
+            <TabItem Header="listView">
+                <ListView ItemsSource="{Binding Produkty}"
+                          SelectedItem="{Binding ZaznaczonyElement}"
+                          SelectionMode="Multiple">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn
+                                DisplayMemberBinding="{Binding Nazwa}"
+                                Header="Nazwa produktu"/>
+                            <GridViewColumn 
+                                DisplayMemberBinding="{Binding Cena}"
+                                Header="Cena"/>
+                            <GridViewColumn
+                                DisplayMemberBinding="{Binding Opis}"
+                                Header="Opis"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="dataGrid">
+                <StackPanel>
+                <DataGrid ItemsSource="{Binding Produkty}">
+                    
+                </DataGrid>
+                    <Separator/>
+                    <DataGrid
+                        ItemsSource="{Binding Produkty}"
+                        CanUserDeleteRows="True"
+                        CanUserReorderColumns="False"
+                        CanUserSortColumns="False"
+                        IsReadOnly="True"
+                        AlternatingRowBackground="CadetBlue"
+                        AlternationCount="3"
+                        RowBackground="Beige"
+                        >
+                        
+                        
+                    </DataGrid>
+                    <Separator/>
+                    <DataGrid 
+                    ItemsSource="{Binding Produkty}"
+                        AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nazwa"
+                                                Binding="{Binding Nazwa}"/>
+                            <DataGridCheckBoxColumn Header="Dostępność"
+                                                    Binding="{Binding Dostepny}"/>
+                            <DataGridComboBoxColumn Header="Kategoria"
+                                                    x:Name="kategoria_data_grid"
+                                                    SelectedItemBinding="{Binding Kategoria}"
+                                                    />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                </StackPanel>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ namespace WpfListy3P
         public double Cena { get; set; }
         public string Opis { get; set; }
         public bool Dostepny { get; set; }
+        public String Kategoria { get; set; }
 
         public Produkt(string nazwa, double cena, string opis, bool dostepny)
         {
@@ -19,6 +20,12 @@ namespace WpfListy3P
             Cena = cena;
             Opis = opis;
             Dostepny = dostepny;
+            Kategoria = "Dla każdego";
+        }
+
+        public Produkt(string nazwa, double cena, string opis, bool dostepny, string kategoria) : this(nazwa, cena, opis, dostepny)
+        {
+            Kategoria = kategoria;
         }
     }
 }

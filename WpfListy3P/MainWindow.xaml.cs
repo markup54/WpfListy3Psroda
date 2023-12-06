@@ -45,6 +45,9 @@ namespace WpfListy3P
             Produkty.Add(new Produkt("miś", 59.99, "milutki ", true));
             Produkty.Add(new Produkt("autko", 4.99, "szybkie ", true));
             Produkty.Add(new Produkt("samolot", 44, "", false));
+            Produkty.Add(new Produkt("lalka", 70, "płacze je itd", true, "Dla dziewczynek"));
+            Produkty.Add(new Produkt("nerf", 60, "strzela daleko", true, "Dla chłopców"));
+            kategoria_data_grid.ItemsSource = new List<string>() { "Dla każdego", "Dla chłopców", "Dla dziewczynek" };
         }
     }
 }
