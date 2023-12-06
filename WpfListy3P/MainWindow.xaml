@@ -30,9 +30,11 @@
                     <Label>jakis label</Label>
                 </ItemsControl>
                 <Separator/>
-                    <ItemsControl>
+                    <ItemsControl ItemsSource="{Binding ListaSlow}">
                         
                     </ItemsControl>
+                    <Separator/>
+                    <ItemsControl x:Name="lista3"/>
                 </StackPanel>
             </TabItem>
             <TabItem Header="ListBox">

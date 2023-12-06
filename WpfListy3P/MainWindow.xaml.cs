@@ -20,9 +20,20 @@ namespace WpfListy3P
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<String> ListaSlow { get; set; }
+
         public MainWindow()
         {
+            ListaSlow = new List<String>();
+            ListaSlow.Add("programisci"); 
+            ListaSlow.Add("nie"); 
+            ListaSlow.Add("obijają"); 
+            ListaSlow.Add("się"); 
+            ListaSlow.Add("nawet"); 
+            ListaSlow.Add("w"); 
             InitializeComponent();
+            DataContext = this;
+            lista3.ItemsSource = ListaSlow; 
         }
     }
 }
